@@ -25,6 +25,7 @@ public class Tournament {
 
           System.out.println("\nThe battle is between " + fighter1.getName() + " and " + fighter2.getName());
           sc.nextLine();
+          System.out.println();
 
           while(fighter2.getHealth() > 0 && fighter1.getHealth() > 0){
               System.out.println(fighter1.getName() + " attacks with " + fighter1.getAttack());

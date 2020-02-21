@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mortal combat.iml" filepath="$PROJECT_DIR$/mortal combat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mortal_combat.iml" filepath="$PROJECT_DIR$/mortal_combat.iml" />
     </modules>
   </component>
 </project>
