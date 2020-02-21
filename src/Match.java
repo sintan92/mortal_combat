@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 
-public class Database {
+public class Match {
 
     Random random = new Random();
     ArrayList<Fighter> fighters = new ArrayList<>();

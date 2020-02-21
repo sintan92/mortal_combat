@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Tournament {
-    Database database = new Database();
+    Match match = new Match();
   Scanner sc = new Scanner(System.in);
 
 
@@ -15,13 +15,13 @@ public class Tournament {
 
   public void fight(){
 
-      database.SQL();
+      match.SQL();
 
 
-      for (int i = 0; i <database.getTotalFighters()/2 ; i++) {
+      for (int i = 0; i <match.getTotalFighters()/2 ; i++) {
 
-          Fighter fighter1 = database.ran(database.getTotalFighters());
-          Fighter fighter2 = database.ran(database.getTotalFighters());
+          Fighter fighter1 = match.ran(match.getTotalFighters());
+          Fighter fighter2 = match.ran(match.getTotalFighters());
 
           System.out.println("\nThe battle is between " + fighter1.getName() + " and " + fighter2.getName());
           sc.nextLine();
@@ -30,7 +30,7 @@ public class Tournament {
           while(fighter2.getHealth() > 0 && fighter1.getHealth() > 0){
               System.out.println(fighter1.getName() + " attacks with " + fighter1.getAttack());
               System.out.println(fighter2.getName() + " lost " + fighter1.getAttack() + " hp" + fighter2.getName() +
-                      " has " + fighter2.getHealth() + " hp left");
+                      " has " + fighter2.getHealth()  + " hp left");
 
               if(fighter1.getHealth() < 1 || fighter2.getHealth() < 1){
                   break;
@@ -38,6 +38,7 @@ public class Tournament {
               System.out.println(fighter2.getName() + " attacks with " + fighter2.getAttack());
               System.out.println(fighter1.getName() + " lost " + fighter2.getAttack() + " hp" + fighter1.getName() +
                       " has " + fighter1.getHealth() + " hp left");
+              7
 
               System.out.println();
           

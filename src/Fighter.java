@@ -33,22 +33,32 @@ public class Fighter {
     }
 
     public void setHealth(int health) {
+
         this.health = health;
     }
 
+    public void loseHealth(int health){
+        this.health = this.health - health;
+    }
+
+
     public int getAttack() {
+
         return attack;
     }
 
     public void setAttack(int attack) {
+
         this.attack = attack;
     }
 
     public int getDefence() {
+
         return defence;
     }
 
     public void setDefence(int defence) {
+
         this.defence = defence;
     }
 
