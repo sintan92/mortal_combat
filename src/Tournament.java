@@ -38,7 +38,7 @@ public class Tournament {
               System.out.println(fighter2.getName() + " attacks with " + fighter2.getAttack());
               System.out.println(fighter1.getName() + " lost " + fighter2.getAttack() + " hp" + fighter1.getName() +
                       " has " + fighter1.getHealth() + " hp left");
-              7
+              
 
               System.out.println();
           
