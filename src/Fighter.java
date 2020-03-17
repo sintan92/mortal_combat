@@ -9,15 +9,15 @@ public class Fighter {
 
 
     private int health = 100;
-    private int attack = 10;
-    private int defence = 5;
+    private int attack = random.nextInt(4) + 1;
+    private int defence = random.nextInt(4) + 1;
     private String name;
+    private String motto;
 
-    public Fighter(String name) {
+    public Fighter(String name, String motto) {
         this.health = health;
-        this.attack = random.nextInt(attack);
-        this.defence = random.nextInt(defence);
         this.name = name;
+        this.motto = motto;
     }
 
     public String getName() {
@@ -28,6 +28,7 @@ public class Fighter {
         this.name = name;
     }
 
+
     public int getHealth() {
         return health;
     }
@@ -37,8 +38,11 @@ public class Fighter {
         this.health = health;
     }
 
-    public void loseHealth(int health){
-        this.health = this.health - health;
+    public void loseHealth(int dmg){
+        this.health = this.health - dmg;
+        if(this.health < 1){
+            System.out.println(Battle.C_RED + this.name + " got knocked the fuck out" + Battle.C_RESET);
+        }
     }
 
 
@@ -61,6 +65,11 @@ public class Fighter {
 
         this.defence = defence;
     }
+
+    public String getMotto(){
+        return motto;
+    }
+
 
     /*  //skapa fighters egenskaper.
     // ju starkare gubbe man har desto mindre chans att träffa fienden?

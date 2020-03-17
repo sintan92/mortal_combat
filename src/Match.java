@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +12,6 @@ public class Match {
 
     Random random = new Random();
     ArrayList<Fighter> fighters = new ArrayList<>();
-    private int totalFighters;
 
 
     public void SQL(){
@@ -35,34 +35,23 @@ try {
     System.out.println("Statement skapat!" + '\r');
 
     //3. Kör en sql fråga.
-    myRs = myStmt.executeQuery("select name from characters");
-    System.out.println("Frågan har tagits emot av databasen!" + '\r');
+    myRs = myStmt.executeQuery("select * from characters");
+    System.out.println("Frågan har tagits emot av databasen!\n" + '\r');
 
     //4. processa resultatsettet.
     while (myRs.next()) {
-        fighters.add(new Fighter(myRs.getString("name")));
-        this.totalFighters++;
+        fighters.add(new Fighter(myRs.getString("name"), myRs.getString("motto")));
         // System.out.println(myRs.getString("name"));
-
-
     }
+    Collections.shuffle(fighters);
 
-    for (int i = 0; i < fighters.size(); i++) {
-        System.out.println(fighters.get(i).getName());
-        System.out.println(fighters.get(i).getAttack());
-        System.out.println(fighters.get(i).getDefence());
-
-    }
         }
-catch (Exception e){
+    catch (Exception e){
     e.printStackTrace();
         }
     }
-    public Fighter ran(int num){
-        return fighters.get(random.nextInt(num));
-    }
 
     public int getTotalFighters(){
-        return totalFighters;
+        return fighters.size();
     }
 }
