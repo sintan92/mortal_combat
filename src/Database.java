@@ -21,7 +21,7 @@ public class Database {
         ResultSet myRs;
         String dbUrl = "jdbc:mysql://localhost:3306/mortal_combat";
         String user = "root";
-        String pass = "Vaggen92";
+        String pass = 
 
 
 try {
